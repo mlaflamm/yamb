@@ -1,0 +1,3 @@
+General;General\r\nPlayTime:%Duration%\r\n\r\nVideo\r\n
+Video;Codec/String:%Codec/String%\r\nWidth:%Width%\r\nHeight:%Height%\r\n\r\nAudio\r\n
+Audio;Codec/String:%Codec/String%\r\n

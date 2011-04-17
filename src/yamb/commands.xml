@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 NT (http://www.xmlspy.com) by Manuel Laflamme (Java development) -->
+<!DOCTYPE commands SYSTEM "../yamb/util/commands/xml/commands.dtd">
+<commands>
+    <!-- File commands -->
+    <command id="open" description="Open file" icon="yamb/images/open.gif"
+             text="#Open File..."/>
+    <command id="save" description="Save file" icon="yamb/images/save.gif" accelerator="control S"
+             text="#Save File As..."/>
+    <command id="exportTagStats" description="Export tag statistics" icon="empty.gif"
+             text="Export tag statistics..."/>
+    <command id="exportPivots" description="Export Pivots collection" icon="empty.gif"
+             text="Export Pivots collection..."/>
+    <command id="exit" description="Quit the application" icon="yamb/images/empty.gif" accelerator="alt F4"
+             text="E#xit"/>
+
+    <command id="openStatView" description="Open a new statistics view"
+             icon="yamb/images/stats.gif" text="Open #Statistics View"/>
+
+    <!--<command id="thumbnailCacheCleanup" description="Open the selected items" icon="yamb/images/empty.gif" accelerator="control O" text="#Open"/>-->
+
+    <!-- Navigation commands -->
+    <!--
+        <command id="back" icon="yamb/images/back2.gif" text="#Back"/>
+        <command id="forward" icon="yamb/images/forward2.gif" text="#Forward"/>
+        <command id="up" icon="yamb/images/up2.gif" text="#Up"/>
+    -->
+    <!-- Edit commands -->
+    <!--
+        <command id="undo" description="Undo the last action" icon="yamb/images/empty.gif" accelerator="control Z" text="#Undo"/>
+        <command id="redo" description="Redo the previously undone action" icon="yamb/images/empty.gif" accelerator="control Y" text="#Redo"/>
+        <command id="cut" description="Cut the selection and put it in the Clipboard" icon="yamb/images/cut.gif" accelerator="control X" text="Cu#t"/>
+        <command id="copy" description="Copy the selection and put it in the Clipboard" icon="yamb/images/copy.gif" accelerator="control C" text="#Copy"/>
+        <command id="paste" description="Insert Clipboard content" icon="yamb/images/paste.gif" accelerator="control V" text="#Paste"/>
+        <command id="rename" description="Rename the selected items" icon="yamb/images/empty.gif" accelerator="F2" text="#Rename"/>
+        <command id="clear" description="Deletes the selected items" icon="yamb/images/empty.gif" text="#Delete"/>
+        <command id="selectAll" description="Deletes the selected items" icon="yamb/images/empty.gif" accelerator="control A" text="Select #All"/>
+    -->
+
+    <!-- File commands -->
+    <command id="fileOpen" description="Open the selected items" icon="yamb/images/empty.gif" accelerator="control O"
+             text="#Open"/>
+    <command id="fileOpenContainingFolderInExplorer" description="Open the focused item containing folder in explorer"
+             icon="yamb/images/empty.gif" text="Open Containing #Folder in Explorer"/>
+    <command id="fileOpenExplorerView" description="Open the focused item folder in a new eplorer view"
+             icon="yamb/images/folders2.gif" accelerator="control E" text="Open #Explorer View"/>
+    <command id="fileOpenTagView" description="Open the selected items in a new tag view"
+             icon="yamb/images/tags.gif" accelerator="control T" text="Open #Tag View"/>
+    <command id="fileOpenGroupView" description="Open the selected item in a new file group view"
+             icon="yamb/images/groups.gif" accelerator="control G" text="Open #Group View"/>
+    <command id="folderOpenRecursive" description="Open the selected folder and show all children recursively"
+             icon="yamb/images/empty.gif" text="Open Recursive"/>
+    <command id="folderAddLibrary" description="Add the selected folder as a library"
+             icon="yamb/images/empty.gif" text="Add Library"/>
+    <command id="folderRemoveLibrary" description="Remove the selected folder library"
+             icon="yamb/images/empty.gif" text="Remove Library"/>
+    <command id="folderRebuildLibrary" description="Rebuild the selected folder library"
+             icon="yamb/images/empty.gif" text="Rebuild Library"/>
+    <command id="fileRebuildThumbnail" description="Regenerate the selected files thumbnails"
+             icon="yamb/images/empty.gif"
+             text="Rebuild T#humbnail"/>
+    <command id="fileRebuildLibrary" description="Regenerate the selected files libraries" icon="yamb/images/empty.gif"
+             text="Rebuild #Library"/>
+    <command id="fileCut" description="Cut the selection and put it in the Clipboard" icon="yamb/images/cut.gif"
+             accelerator="control X" text="Cu#t"/>
+    <command id="fileCopy" description="Copy the selection and put it in the Clipboard" icon="yamb/images/copy.gif"
+             accelerator="control C" text="#Copy"/>
+    <command id="filePaste" description="Insert Clipboard content" icon="yamb/images/paste.gif" accelerator="control V"
+             text="#Paste"/>
+    <command id="fileRename" description="Rename the selected items" icon="yamb/images/empty.gif" accelerator="F2"
+             text="#Rename"/>
+    <command id="fileDelete" description="Deletes the selected items" icon="yamb/images/empty.gif" accelerator="DELETE"
+             text="#Delete"/>
+    <command id="fileSelectAll" description="Deletes the selected items" icon="yamb/images/empty.gif"
+             text="Select #All"/>
+    <command id="fileProperties" description="Displays the properties of the selected items"
+             icon="yamb/images/empty.gif"
+             text="Properties"/>
+    <command id="fileFilterSelectedTags" description="Set the selected files tags as file filter"
+             icon="yamb/images/tags.gif"
+             text="Filter Files By Selected Tags"/>
+    <command id="fileFilterSelectedFileGroups" description="Set the selected files groups as file filter"
+             icon="yamb/images/groups.gif"
+             text="Filter Files By Selected Groups"/>
+    <command id="fileFilterReset" description="Reset the file filter" icon="yamb/images/star.gif"
+             text="Filter Reset"/>
+
+    <command id="fileTypeFilterAll" description="Shows all file items" icon="yamb/images/empty.gif"
+             text="#All" group="fileTypeFilter"/>
+    <command id="fileTypeFilterVideos" description="Shows only video file items" icon="yamb/images/empty.gif"
+             text="#Videos" group="fileTypeFilter"/>
+    <command id="fileTypeFilterImages" description="Shows only image file items" icon="yamb/images/empty.gif"
+             text="#Images" group="fileTypeFilter"/>
+    <command id="fileTypeFilterCustom" description="Shows file items matching the custom filter"
+             icon="yamb/images/empty.gif"
+             text="#Custom" group="fileTypeFilter"/>
+
+
+    <!-- View commands -->
+    <command id="explorerBack" icon="yamb/images/back2.gif" text="#Back"/>
+    <command id="explorerForward" icon="yamb/images/forward2.gif" text="#Forward"/>
+    <command id="explorerUp" icon="yamb/images/up2.gif" text="#Up"/>
+    <command id="explorerShowFolders" description="Shows the folders bar" icon="yamb/images/folders.gif"
+             text="#Folders"/>
+    <command id="fileTypeFilterPopup" description="Select file type filter" icon="yamb/images/filter.gif"
+             text="File Type Filter"/>
+
+    <!--
+        <command id="viewFavorites" description="Displays favorites browser" icon="yamb/images/favorites.gif"
+                 text="Favorites" group="treeViewMode"/>
+    -->
+
+    <command id="viewList" description="Displays items in a list" icon="yamb/images/list.gif" text="#List"
+             group="listViewMode"/>
+    <command id="viewDetails" description="Displays detailed information about each item in the view"
+             icon="yamb/images/details.gif" text="#Details" group="listViewMode"/>
+    <command id="viewThumbnails" description="Displays items using thumbnail view" icon="yamb/images/thumbnails.gif"
+             text="#Thumbnails" group="listViewMode"/>
+
+    <command id="viewRefresh" description="Refreshes the content of the current view" icon="yamb/images/refresh.gif"
+             accelerator="F5" text="#Refresh"/>
+
+    <command id="tagSetAnd" description="Displays files matching all the active tags" icon="yamb/images/equal.gif"
+             text="'#And' tag condition" group="tagGrouping"/>
+    <command id="tagSetOr" description="Displays files matching at least one of the active tags"
+             icon="yamb/images/plus.gif"
+             text="'#Or' tag condition" group="tagGrouping"/>
+    <command id="tagRecentOnly" description="Displays only recent tagged files" icon="yamb/images/recent.gif"
+             text="Recent Only" group="tagRecentOnly"/>
+    <command id="tagFilterActiveTags" description="Set the active tags as tags filter" icon="yamb/images/tags.gif"
+             text="Filter Tags By Active Tags"/>
+    <command id="tagFilterReset" description="Reset the tags filter" icon="yamb/images/star.gif"
+             text="Filter Reset"/>
+
+    <command id="libraryCopy" description="Copies the path of the selected libraries into the clipboards"
+             icon="yamb/images/empty.gif" text="#Copy Path"/>
+    <command id="libraryLoadSelected" description="Loads selected libraries"
+             icon="yamb/images/empty.gif" text="Load Selected"/>
+    <command id="libraryLoadSelectedOnly" description="Loads only selected libraries and unload others"
+             icon="yamb/images/empty.gif" text="Load Selected Only"/>
+    <command id="libraryLoadAll" description="Loads all libraries"
+             icon="yamb/images/_selectall.gif" text="#Load All"/>
+    <command id="libraryUnloadSelected" description="Unloads selected libraries"
+             icon="yamb/images/empty.gif" text="#Unload Selected"/>
+    <command id="libraryRemoveSelected" description="Remove selected libraries"
+             icon="yamb/images/empty.gif" text="#Remove Selected"/>
+    <command id="libraryUnloadAll" description="Unloads all libraries"
+             icon="yamb/images/_unselectall.gif" text="#Unload All"/>
+    <command id="libraryRebuildAll" description="Rebuild all libraries"
+             icon="yamb/images/_rebuildall.gif" text="Rebuild #All"/>
+    <command id="libraryRebuildLoaded" description="Rebuild loaded libraries"
+             icon="yamb/images/empty.gif" text="Rebuild Loaded"/>
+    <command id="libraryRebuildSelected" description="Rebuild selected libraries"
+             icon="yamb/images/empty.gif" text="#Rebuild Selected"/>
+    <command id="libraryOpenExplorerView" description="Open selected libraries root in new explorer views"
+             icon="yamb/images/empty.gif" text="Open #Explorer View"/>
+
+    <command id="tagActivateSelected" description="Activate selected tags"
+             icon="yamb/images/empty.gif" text="Activate Selected"/>
+    <command id="tagActivateSelectedOnly" description="Activate only selected tags and deactivate others"
+             icon="yamb/images/empty.gif" text="Activate Selected Only"/>
+    <command id="tagDeactivateSelected" description="Deactivate selected tags"
+             icon="yamb/images/empty.gif" text="Deactivate Selected"/>
+
+    <command id="tagActivateAll" description="Activate all tags"
+             icon="yamb/images/empty.gif" text="Activate #All"/>
+    <command id="tagDeactivateAll" description="Deactivate all tags"
+             icon="yamb/images/empty.gif" text="#Deactivate All"/>
+
+    <command id="tagCopy" description="Copies the current selected tag names into the clipboards"
+             icon="yamb/images/empty.gif" text="#Copy"/>
+    <command id="tagRename" description="Renames the current selected tag names"
+             icon="yamb/images/empty.gif" text="#Rename"/>
+    <command id="tagAddFavorites" description="Add Selected tags to favorites"
+             icon="yamb/images/empty.gif" text="Add #Favorites"/>
+    <command id="tagRemoveFavorites" description="Remove selected tags from favories"
+             icon="yamb/images/empty.gif" text="Remove Favorites"/>
+    <command id="tagSearchIafd" description="Search tag on web"
+             icon="yamb/images/empty.gif" text="Iafd.com"/>
+
+    <command id="exportMklinkBatch" description="Export mklink tag file structure batch file"
+             icon="yamb/images/empty.gif" text="Export tag file structure"/>
+
+    <command id="groupCopy" description="Copies the selected group name into the clipboards"
+             icon="yamb/images/empty.gif" text="#Copy"/>
+    <command id="groupRename" description="Reanames the selected group name"
+             icon="yamb/images/empty.gif" text="#Rename"/>
+    <command id="groupFindDuplicate" description="Find duplicated group names"
+             icon="yamb/images/search.gif" text="Find Duplicates"/>
+    <command id="groupSearchIafd" description="Search group on web"
+             icon="yamb/images/empty.gif" text="Iafd.com"/>
+    <command id="groupSearchFifialfa" description="Search group on web"
+             icon="yamb/images/empty.gif" text="Fifialfa.com"/>
+
+    <command id="groupFilterActiveGroup" description="Set the active group as group filter"
+             icon="yamb/images/groups.gif"
+             text="Filter Group By Active Group"/>
+    <command id="groupFilterReset" description="Reset the group filter" icon="yamb/images/star.gif"
+             text="Filter Reset"/>
+    <!-- Tool commands -->
+    <!--
+        <command id="toolImitate" description="Modifies a file name and applies the changes to all files"
+                 icon="yamb/images/empty.gif" text="#Imitate..."/>
+        <command id="toolSeries" description="Generates a numbered files series" icon="yamb/images/empty.gif"
+                 text="#Series..."/>
+        <command id="toolReplace" description="Replaces text in multiple file names" icon="yamb/images/empty.gif"
+                 text="Search &amp; #Replace..."/>
+        <command id="toolCase" description="Makes all your files have the same capitalization style"
+                 icon="yamb/images/empty.gif" text="Standardize #Case..."/>
+        <command id="toolThumbnails1" description="" icon="yamb/images/empty.gif" text="MediaInfo"/>
+        <command id="toolThumbnails2" description="" icon="yamb/images/empty.gif" text="GetFrame"/>
+    -->
+
+    <!-- Help commands -->
+    <command id="help" description="Launch application's help topics." icon="yamb/images/empty.gif" accelerator="F1"
+             text="Help #Topics"/>
+    <command id="about" description="Display program information and copyright" icon="yamb/images/about.gif"
+             text="#About"/>
+
+    <!-- Application menubar -->
+    <menubar id="yamb">
+        <menu text="#File">
+            <menuItem ref="fileOpenExplorerView"/>
+            <menuItem ref="fileOpenTagView"/>
+            <menuItem ref="fileOpenGroupView"/>
+            <menuItem ref="openStatView"/>
+            <menu id="mru" text="Recent Files">
+            </menu>
+            <!--
+                        <menuItem ref="save"/>
+            -->
+            <separator/>
+            <menuItem ref="exportTagStats"/>
+            <menuItem ref="exportPivots"/>
+            <menuItem ref="exportMklinkBatch"/>
+            <menuItem ref="thumbnailCacheCleanup"/>
+            <separator/>
+            <menuItem ref="exit"/>
+        </menu>
+        <menu text="#Edit">
+            <menuItem ref="fileCut"/>
+            <menuItem ref="fileCopy"/>
+            <menuItem ref="filePaste"/>
+            <separator/>
+            <menuItem ref="fileRename"/>
+            <menuItem ref="fileDelete"/>
+            <separator/>
+            <menuItem ref="fileSelectAll"/>
+        </menu>
+        <menu text="#View">
+            <!--
+                        <menuItem ref="viewTree"/>
+                        <menuItem ref="viewTags"/>
+                        <menuItem ref="viewFavorites"/>
+                        <separator/>
+            -->
+            <menuItem ref="viewList"/>
+            <menuItem ref="viewDetails"/>
+            <menuItem ref="viewThumbnails"/>
+            <separator/>
+            <menuItem ref="viewRefresh"/>
+        </menu>
+        <menu id="bookmarks" text="#Bookmarks">
+            <menuItem ref="bookmarksManage"/>
+        </menu>
+        <!--
+                <menu text="#Tools">
+                    <menuItem ref="toolImitate"/>
+                    <menuItem ref="toolSeries"/>
+                    <menuItem ref="toolReplace"/>
+                    <menuItem ref="toolCase"/>
+                    <separator/>
+                    <menuItem ref="toolThumbnails1"/>
+                    <menuItem ref="toolThumbnails2"/>
+                </menu>
+        -->
+        <menu text="#Help">
+            <menuItem ref="help"/>
+            <separator/>
+            <menuItem ref="about"/>
+        </menu>
+    </menubar>
+
+    <!-- File popup menu -->
+    <menu id="filePopup">
+        <menuItem ref="fileOpen"/>
+        <menuItem ref="fileOpenContainingFolderInExplorer"/>
+        <separator/>
+        <menuItem ref="fileOpenExplorerView"/>
+        <menuItem ref="fileOpenTagView"/>
+        <menuItem ref="fileOpenGroupView"/>
+        <separator/>
+        <menuItem ref="fileFilterSelectedTags"/>
+        <menuItem ref="fileFilterSelectedFileGroups"/>
+        <separator/>
+        <menuItem ref="fileRebuildThumbnail"/>
+        <menuItem ref="fileRebuildLibrary"/>
+        <menuItem ref="fileNormalizeTagNames"/>
+        <separator/>
+        <menuItem ref="fileCut"/>
+        <menuItem ref="fileCopy"/>
+        <separator/>
+        <menuItem ref="fileRename"/>
+        <menuItem ref="fileDelete"/>
+        <separator/>
+        <menuItem ref="fileProperties"/>
+    </menu>
+
+    <!-- File type filter popup menu -->
+    <menu id="fileTypeFilterPopup">
+        <menuItem ref="fileTypeFilterAll"/>
+        <menuItem ref="fileTypeFilterVideos"/>
+        <menuItem ref="fileTypeFilterImages"/>
+        <separator/>
+        <menuItem ref="fileTypeFilterCustom"/>
+    </menu>
+
+    <!-- Folder popup menu -->
+    <menu id="folderPopup">
+        <menuItem ref="fileOpen"/>
+        <menuItem ref="folderOpenRecursive"/>
+        <separator/>
+        <menuItem ref="fileOpenExplorerView"/>
+        <separator/>
+        <menuItem ref="folderAddLibrary"/>
+        <menuItem ref="folderRemoveLibrary"/>
+        <menuItem ref="folderRebuildLibrary"/>
+        <separator/>
+        <menuItem ref="fileCut"/>
+        <menuItem ref="fileCopy"/>
+        <menuItem ref="filePaste"/>
+        <separator/>
+        <menuItem ref="fileRename"/>
+        <menuItem ref="fileDelete"/>
+        <separator/>
+        <menuItem ref="fileProperties"/>
+    </menu>
+
+    <!-- Drop to folder popup menu -->
+    <menu id="dropToFolderPopup">
+        <menuItem ref="fileOpen"/>
+        <menuItem ref="folderOpenRecursive"/>
+        <!--
+                <separator/>
+                <menuItem ref="fileRename"/>
+                <menuItem ref="fileDelete"/>
+        -->
+        <separator/>
+        <menuItem ref="fileCut"/>
+        <menuItem ref="fileDropCopy"/>
+        <menuItem ref="fileDropMove"/>
+        <separator/>
+        <menuItem ref="fileDropCancel"/>
+    </menu>
+
+    <!-- Tag popup menu -->
+    <menu id="tagPopup">
+        <menuItem ref="tagCopy"/>
+        <separator/>
+        <menuItem ref="tagFilterActiveTags"/>
+        <separator/>
+        <menuItem ref="tagActivateSelected"/>
+        <menuItem ref="tagActivateSelectedOnly"/>
+        <menuItem ref="tagDeactivateSelected"/>
+        <separator/>
+        <menuItem ref="tagActivateAll"/>
+        <menuItem ref="tagDeactivateAll"/>
+        <separator/>
+        <menuItem ref="tagAddBookmark"/>
+        <menuItem ref="tagRemoveBookmark"/>
+        <!--
+                <menuItem ref="tagAddFavorite"/>
+                <menuItem ref="tagRemoveFavorite"/>
+        -->
+        <separator/>
+        <menu text="#Search">
+            <menuItem ref="tagSearchIafd"/>
+        </menu>
+        <separator/>
+        <menuItem ref="tagRename"/>
+    </menu>
+
+    <!-- Libraries popup menu -->
+    <menu id="libraryPopup">
+        <menuItem ref="libraryCopy"/>
+        <separator/>
+        <menuItem ref="libraryLoadSelected"/>
+        <menuItem ref="libraryLoadSelectedOnly"/>
+        <menuItem ref="libraryUnloadSelected"/>
+        <separator/>
+        <menuItem ref="libraryOpenExplorerView"/>
+        <separator/>
+        <menuItem ref="libraryLoadAll"/>
+        <menuItem ref="libraryUnloadAll"/>
+        <separator/>
+        <menuItem ref="libraryRebuildSelected"/>
+        <menuItem ref="libraryRebuildAll"/>
+        <menuItem ref="libraryRebuildLoaded"/>
+        <separator/>
+        <menuItem ref="libraryRemoveSelected"/>
+    </menu>
+
+    <!-- Group popup menu -->
+    <menu id="groupPopup">
+        <menuItem ref="groupCopy"/>
+        <separator/>
+        <menu text="#Search">
+            <menuItem ref="groupSearchIafd"/>
+            <menuItem ref="groupSearchFifialfa"/>
+        </menu>
+        <separator/>
+        <!--
+                <menuItem ref="groupFindDuplicate"/>
+                <menuItem ref="groupFindDuplicate2"/>
+        -->
+        <menuItem ref="groupRename"/>
+    </menu>
+
+    <toolbar id="libraryToolbar">
+        <toolbarItem ref="libraryLoadAll"/>
+        <toolbarItem ref="libraryUnloadAll"/>
+        <!--<toolbarItem ref="libraryInvertLoaded"/>-->
+        <separator/>
+        <toolbarItem ref="libraryRebuildAll"/>
+    </toolbar>
+
+    <toolbar id="explorerToolbar">
+        <toolbarItem ref="explorerBack"/>
+        <toolbarItem ref="explorerForward"/>
+        <toolbarItem ref="explorerUp"/>
+        <separator/>
+        <toolbarItem ref="explorerShowFolders"/>
+        <!--<separator/>-->
+        <!--<toolbarItem ref="fileTypeFilterPopup"/>-->
+    </toolbar>
+
+    <toolbar id="groupDuplicateToolbar">
+        <toolbarItem ref="groupFindDuplicate"/>
+    </toolbar>
+
+    <toolbar id="fileFilterToolbar">
+        <toolbarItem ref="fileFilterSelectedTags"/>
+        <toolbarItem ref="fileFilterSelectedFileGroups"/>
+        <toolbarItem ref="fileFilterReset"/>
+    </toolbar>
+
+    <toolbar id="tagFilterToolbar">
+        <toolbarItem ref="tagFilterActiveTags"/>
+        <toolbarItem ref="tagFilterReset"/>
+    </toolbar>
+
+    <toolbar id="groupFilterToolbar">
+        <toolbarItem ref="groupFilterActiveGroup"/>
+        <toolbarItem ref="groupFilterReset"/>
+    </toolbar>
+
+    <toolbar id="yamb">
+        <!--
+                <toolbarItem ref="open"/>
+                <toolbarItem ref="save"/>
+                <separator/>
+        -->
+        <!--
+                <toolbarItem ref="back"/>
+                <toolbarItem ref="forward"/>
+                <toolbarItem ref="up"/>
+                <separator/>
+        -->
+        <!--
+        <toolbarItem ref="cut"/>
+        <toolbarItem ref="copy"/>
+        <toolbarItem ref="paste"/>
+        <separator/>
+        -->
+        <toolbarItem ref="fileOpenExplorerView"/>
+        <toolbarItem ref="fileOpenTagView"/>
+        <toolbarItem ref="fileOpenGroupView"/>
+        <toolbarItem ref="openStatView"/>
+        <separator/>
+        <toolbarItem ref="viewRefresh"/>
+        <!--
+                <separator/>
+                <toolbarItem ref="explorerShowFolders"/>
+        -->
+        <!--
+        <toolbarItem ref="viewFavorites"/>
+        -->
+        <separator/>
+        <toolbarItem ref="tagSetAnd"/>
+        <toolbarItem ref="tagSetOr"/>
+        <toolbarItem ref="tagRecentOnly"/>
+        <separator/>
+        <toolbarItem ref="viewList"/>
+        <toolbarItem ref="viewDetails"/>
+        <toolbarItem ref="viewThumbnails"/>
+        <separator/>
+        <toolbarItem ref="libraryLoadAll"/>
+        <toolbarItem ref="libraryUnloadAll"/>
+        <toolbarItem ref="libraryRebuildAll"/>
+        <separator/>
+        <toolbarItem ref="about"/>
+    </toolbar>
+</commands>
