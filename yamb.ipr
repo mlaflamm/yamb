@@ -404,6 +404,18 @@
         <root url="jar://$PROJECT_DIR$/../_3rdparties/swingx-1.6/swingx-1.6-src.zip!/swingx-1.6-src/src/java" />
       </SOURCES>
     </library>
+    <library name="xuggler">
+      <CLASSES>
+        <root url="jar://C:/Program Files/Xuggle/share/java/jars/slf4j-api.jar!/" />
+        <root url="jar://C:/Program Files/Xuggle/share/java/jars/xuggle-xuggler-test.jar!/" />
+        <root url="jar://C:/Program Files/Xuggle/share/java/jars/xuggle-xuggler.jar!/" />
+        <root url="jar://C:/Program Files/Xuggle/share/java/jars/commons-cli.jar!/" />
+        <root url="jar://C:/Program Files/Xuggle/share/java/jars/logback-classic.jar!/" />
+        <root url="jar://C:/Program Files/Xuggle/share/java/jars/logback-core.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
 </project>
 

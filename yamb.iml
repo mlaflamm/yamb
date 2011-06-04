@@ -21,6 +21,7 @@
     <orderEntry type="library" name="riverlayout-1.1" level="project" />
     <orderEntry type="library" name="cismet" level="project" />
     <orderEntry type="library" name="jna" level="project" />
+    <orderEntry type="library" name="xuggler" level="project" />
   </component>
 </module>
 
