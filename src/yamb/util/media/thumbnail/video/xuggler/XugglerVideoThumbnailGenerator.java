@@ -104,8 +104,12 @@ public class XugglerVideoThumbnailGenerator extends AbstractVideoThumbnailGenera
 
             // Seek to the next key frame near the specified position
             long steamDuration = container.getStream(videoStreamId).getDuration();
-            container.seekKeyFrame(videoStreamId, (long) (steamDuration * (aPosition / 100.0f)),
+            int seekResult = container.seekKeyFrame(videoStreamId, (long) (steamDuration * (aPosition / 100.0f)),
                     IURLProtocolHandler.SEEK_SET);
+            if (seekResult < 0)
+            {
+                throw new RuntimeException("could not seek to specified position: " + filename);
+            }
 
             /*
             * Now, we start walking through the container looking at first packet after seeking.
@@ -116,7 +120,7 @@ public class XugglerVideoThumbnailGenerator extends AbstractVideoThumbnailGenera
                 /*
                 * Now we have a packet, let's see if it belongs to our video stream
                 */
-                if (packet.getStreamIndex() == videoStreamId)
+                if (packet.getStreamIndex() == videoStreamId && packet.isKeyPacket())
                 {
                     /*
                     * We allocate a new picture to get the data out of Xuggler
