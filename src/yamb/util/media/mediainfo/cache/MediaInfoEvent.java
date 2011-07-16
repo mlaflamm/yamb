@@ -1,6 +1,6 @@
 package yamb.util.media.mediainfo.cache;
 
-import yamb.util.media.mediainfo.MediaInfo;
+import yamb.util.media.VideoInfo;
 
 import java.io.File;
 import java.util.EventObject;
@@ -12,9 +12,9 @@ import java.util.EventObject;
 public class MediaInfoEvent extends EventObject
 {
     private final File mMediaFile;
-    private final MediaInfo mMediaInfo;
+    private final VideoInfo mMediaInfo;
 
-    public MediaInfoEvent(Object aSource, File aMediaFile, MediaInfo aMediaInfo)
+    public MediaInfoEvent(Object aSource, File aMediaFile, VideoInfo aMediaInfo)
     {
         super(aSource);
         mMediaFile = aMediaFile;
@@ -26,7 +26,7 @@ public class MediaInfoEvent extends EventObject
         return mMediaFile;
     }
 
-    public MediaInfo getMediaInfo()
+    public VideoInfo getMediaInfo()
     {
         return mMediaInfo;
     }
