@@ -103,8 +103,13 @@ public class XugglerVideoThumbnailGenerator extends AbstractVideoThumbnailGenera
             }
 
             // Seek to the next key frame near the specified position
-            long steamDuration = container.getStream(videoStreamId).getDuration();
-            int seekResult = container.seekKeyFrame(videoStreamId, (long) (steamDuration * (aPosition / 100.0f)),
+            long streamDuration = container.getStream(videoStreamId).getDuration();
+            if (streamDuration <= 0)
+            {
+                // If unable to read duration, try to seek to 2 minutes
+                streamDuration = 1000 * 60 * 2;
+            }
+            int seekResult = container.seekKeyFrame(videoStreamId, (long) (streamDuration * (aPosition / 100.0f)),
                     IURLProtocolHandler.SEEK_SET);
             if (seekResult < 0)
             {

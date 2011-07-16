@@ -75,7 +75,7 @@ public class Main
         File thumbDirectory = new File(dataDirectory, "thumbnail");
         FileUtils.forceMkdir(thumbDirectory);
         VideoThumbnailGenerator jmfGenerator = new JmfVideoThumbnailGenerator();
-        VideoThumbnailGenerator xugglerGenerator = new XugglerVideoThumbnailGenerator();
+        VideoThumbnailGenerator xugglerGenerator = new ExternalProcessVideoThumbnailGenerator(new File(thumbDirectory, ".temp/xuggler"), XugglerVideoThumbnailGenerator.class);
 //        VideoThumbnailGenerator jmfGenerator = new ExternalProcessVideoThumbnailGenerator(new File(thumbDirectory, "(temp)/jmf"), JmfVideoThumbnailGenerator.class);
         VideoThumbnailGenerator ffmpegGenerator = new FfmpegTempFileThumbnailGenerator(new File(thumbDirectory, ".temp/ffmpeg"));
 //        VideoThumbnailGenerator dsjGenerator = new DsjVideoThumbnailGenerator();
@@ -87,11 +87,12 @@ public class Main
         //      Videos
         ThumbnailGenerator generator = new TaggedOnlyVideoGenerator(xugglerGenerator, dsjGenerator, ffmpegGenerator/*, jmfGenerator*/);
         thumbnailGeneratorRegistry.registerGenerator(Videos.getVideoExtensions(), generator);
-//        thumbnailGeneratorRegistry.registerGenerator("flv", new TaggedOnlyVideoGenerator(dsjGenerator, jmfGenerator));
+//        thumbnailGeneratorRegistry.registerGenerator("flv", new TaggedOnlyVideoGenerator(dsjGenerator, ffmpegGenerator));
+//        thumbnailGeneratorRegistry.registerGenerator("mkv", new TaggedOnlyVideoGenerator(dsjGenerator, ffmpegGenerator));
 //        thumbnailGeneratorRegistry.registerGenerator("asf", new TaggedOnlyVideoGenerator(dsjGenerator, ffmpegGenerator));
 //        thumbnailGeneratorRegistry.registerGenerator("mpg", new TaggedOnlyVideoGenerator(dsjGenerator, ffmpegGenerator));
 //        thumbnailGeneratorRegistry.registerGenerator("mpeg", new TaggedOnlyVideoGenerator(dsjGenerator, ffmpegGenerator));
-        thumbnailGeneratorRegistry.registerGenerator("wmv", new TaggedOnlyVideoGenerator(dsjGenerator, ffmpegGenerator));
+//        thumbnailGeneratorRegistry.registerGenerator("wmv", new TaggedOnlyVideoGenerator(dsjGenerator, ffmpegGenerator));
 
         //      Images
         thumbnailGeneratorRegistry.registerGenerator(Images.getImageExtensions(), new DefaultImageThumbnailGenerator());
