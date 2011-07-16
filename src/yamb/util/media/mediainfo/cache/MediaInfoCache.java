@@ -1,6 +1,7 @@
 package yamb.util.media.mediainfo.cache;
 
 import yamb.util.event.SwingSafeEventSupport;
+import yamb.util.media.VideoInfo;
 import yamb.util.media.Videos;
 import yamb.util.media.mediainfo.MediaInfo;
 import org.apache.commons.collections.map.LRUMap;
@@ -19,7 +20,7 @@ public class MediaInfoCache
 
     private final SwingSafeEventSupport mEventSupport = new SwingSafeEventSupport();
 
-    private Map<File, MediaInfo> mLruCache = new LRUMap(16);
+    private Map<File, VideoInfo> mLruCache = new LRUMap(16);
     private File mFileToProcess;
 
     public MediaInfoCache()
@@ -35,11 +36,11 @@ public class MediaInfoCache
      * If the MediaInfo is not found in the cache, the cache will load the information in a
      * background thread and notify the listeners.
      */
-    public MediaInfo getCachedMediaInfo(File aMediaFile)
+    public VideoInfo getCachedMediaInfo(File aMediaFile)
     {
         synchronized(mLruCache)
         {
-            MediaInfo mediaInfo = mLruCache.get(aMediaFile);
+            VideoInfo mediaInfo = mLruCache.get(aMediaFile);
             if (mediaInfo != null)
             {
                 return mediaInfo;
@@ -52,11 +53,11 @@ public class MediaInfoCache
         return null;
     }
 
-    private void fireMediaInfoUpdated(File aMediaFile, MediaInfo aMediaInfo)
+    private void fireMediaInfoUpdated(File aMediaFile, VideoInfo aMediaInfo)
     {
         synchronized (mEventSupport)
         {
-            mEventSupport.fireEvent("mediaInfoUpdated", new MediaInfoEvent(this, aMediaFile, aMediaInfo));
+            mEventSupport.fireEvent("mediaInfoUpdated", new VideoInfoEvent(this, aMediaFile, aMediaInfo));
         }
     }
 
@@ -92,7 +93,7 @@ public class MediaInfoCache
                     if (fileToProcess != null && fileToProcess.exists() && fileToProcess.isFile() &&
                             Videos.isVideoFile(fileToProcess))
                     {
-                        MediaInfo mediaInfo = MediaInfo.createVideoInfo(fileToProcess);
+                        VideoInfo mediaInfo = MediaInfo.createVideoInfo(fileToProcess);
 
                         synchronized(mLruCache)
                         {

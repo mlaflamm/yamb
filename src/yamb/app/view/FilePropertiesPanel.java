@@ -2,11 +2,11 @@ package yamb.app.view;
 
 import yamb.app.fileitem.FileItem;
 import yamb.util.Disposable;
+import yamb.util.media.VideoInfo;
 import yamb.util.media.Videos;
-import yamb.util.media.mediainfo.MediaInfo;
 import yamb.util.media.mediainfo.cache.MediaInfoCache;
-import yamb.util.media.mediainfo.cache.MediaInfoEvent;
 import yamb.util.media.mediainfo.cache.MediaInfoListener;
+import yamb.util.media.mediainfo.cache.VideoInfoEvent;
 import org.apache.log4j.Logger;
 
 import java.beans.PropertyChangeEvent;
@@ -35,7 +35,7 @@ public class FilePropertiesPanel extends JTextArea implements PropertyChangeList
         mMediaInfoCache.addMediaInfoEventListener(this);
     }
 
-    private void handleMediaInfo(File aMediaFile, MediaInfo aMediaInfo)
+    private void handleMediaInfo(File aMediaFile, VideoInfo aMediaInfo)
     {
         setText(Videos.getVideoDetailsText(aMediaFile, aMediaInfo));
     }
@@ -60,7 +60,7 @@ public class FilePropertiesPanel extends JTextArea implements PropertyChangeList
             if (focusedItem != null && !focusedItem.isDirectory() &&
                     Videos.isVideoFile(focusedItem.getFile()))
             {
-                MediaInfo mediaInfo = mMediaInfoCache.getCachedMediaInfo(focusedItem.getFile());
+                VideoInfo mediaInfo = mMediaInfoCache.getCachedMediaInfo(focusedItem.getFile());
                 handleMediaInfo(focusedItem.getFile(), mediaInfo);
             }
             else
@@ -73,7 +73,7 @@ public class FilePropertiesPanel extends JTextArea implements PropertyChangeList
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
     // MediaInfoListener interface
 
-    public void mediaInfoUpdated(MediaInfoEvent aEvent)
+    public void mediaInfoUpdated(VideoInfoEvent aEvent)
     {
         FileItem focusedItem = mViewContext.getFocusedItem();
 //        LOGGER.debug("mediaInfoUpdated - focused="+focusedItem+", event=" + aEvent);

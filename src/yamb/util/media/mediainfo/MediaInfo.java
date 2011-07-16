@@ -29,7 +29,7 @@ public class MediaInfo implements VideoInfo
     {
     }
 
-    public static MediaInfo createVideoInfo(File aMediaFile)
+    public static VideoInfo createVideoInfo(File aMediaFile)
     {
         MediaInfo mediaInfo = new MediaInfo();
         boolean initialized = false;
@@ -142,22 +142,6 @@ public class MediaInfo implements VideoInfo
     {
         return mAudioCodec;
     }
-
-    public MediaInfoRecord getGeneralRecord()
-    {
-        return mGeneralRecord;
-    }
-
-    public MediaInfoRecord getVideoRecord()
-    {
-        return mVideoRecord;
-    }
-
-    public MediaInfoRecord getAudioRecord()
-    {
-        return mAudioRecord;
-    }
-
 
     public String toString()
     {

@@ -8,5 +8,5 @@ import java.util.EventListener;
  */
 public interface MediaInfoListener extends EventListener
 {
-    public void mediaInfoUpdated(MediaInfoEvent aEvent);
+    public void mediaInfoUpdated(VideoInfoEvent aEvent);
 }

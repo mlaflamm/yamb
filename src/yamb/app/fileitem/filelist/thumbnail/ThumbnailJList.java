@@ -3,8 +3,8 @@ package yamb.app.fileitem.filelist.thumbnail;
 import yamb.app.fileitem.FileItem;
 import yamb.app.tag.library.LibraryManager;
 import yamb.app.view.FileListViewContext;
+import yamb.util.media.VideoInfo;
 import yamb.util.media.Videos;
-import yamb.util.media.mediainfo.MediaInfo;
 import yamb.util.media.mediainfo.cache.MediaInfoCache;
 import yamb.util.swing.AutoDisposeModelJList;
 
@@ -46,7 +46,7 @@ public class ThumbnailJList extends AutoDisposeModelJList
         if (index >= 0 && getCellBounds(index, index).contains(aEvent.getPoint()))
         {
             FileItem fileItem = (FileItem) getModel().getElementAt(index);
-            MediaInfo mediaInfo = mMediaInfoCache.getCachedMediaInfo(fileItem.getFile());
+            VideoInfo mediaInfo = mMediaInfoCache.getCachedMediaInfo(fileItem.getFile());
             return Videos.getVideoDetailsHtml(fileItem.getFile(), mediaInfo);
         }
         return null;

@@ -19,6 +19,7 @@ public abstract class AbstractTempFileThumbnailGenerator extends AbstractVideoTh
     {
         mTempDirectory = aTempDirectory;
         FileUtils.forceMkdir(mTempDirectory);
+        FileUtils.cleanDirectory(mTempDirectory);
     }
 
     protected File getThumbnailTempFile(File aFile)

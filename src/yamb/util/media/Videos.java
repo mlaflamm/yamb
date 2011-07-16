@@ -106,14 +106,14 @@ public class Videos
     }
 
     // todo : make this more efficient!
-    public static String getVideoDetailsHtml(File aFile, MediaInfo aMediaInfo)
+    public static String getVideoDetailsHtml(File aFile, VideoInfo aMediaInfo)
     {
         String text = getVideoDetailsText(aFile, aMediaInfo);
         return "<html>" + text.replaceAll("\\r\\n", "<br>") + "<html/>";
     }
 
     // todo : remove dependency to Tags utility class!
-    public static String getVideoDetailsText(File aFile, MediaInfo aMediaInfo)
+    public static String getVideoDetailsText(File aFile, VideoInfo aMediaInfo)
     {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         PrintWriter writer = new PrintWriter(new OutputStreamWriter(out), true);

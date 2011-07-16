@@ -1,8 +1,8 @@
 package yamb.app.fileitem.filelist;
 
 import yamb.app.view.FileListViewContext;
+import yamb.util.media.VideoInfo;
 import yamb.util.media.Videos;
-import yamb.util.media.mediainfo.MediaInfo;
 import yamb.util.media.mediainfo.cache.MediaInfoCache;
 import yamb.util.swing.AutoDisposeModelJList;
 
@@ -32,7 +32,7 @@ public class FileJList extends AutoDisposeModelJList
         if (index >= 0 && getCellBounds(index, index).contains(aEvent.getPoint()))
         {
             FileListItem fileItem = (FileListItem) getModel().getElementAt(index);
-            MediaInfo mediaInfo = mMediaInfoCache.getCachedMediaInfo(fileItem.getFile());
+            VideoInfo mediaInfo = mMediaInfoCache.getCachedMediaInfo(fileItem.getFile());
             return Videos.getVideoDetailsHtml(fileItem.getFile(), mediaInfo);
         }
         return null;

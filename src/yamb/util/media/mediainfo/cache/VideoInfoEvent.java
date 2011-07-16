@@ -9,12 +9,12 @@ import java.util.EventObject;
  * @author manuel.laflamme
  * @since Apr 14, 2008
  */
-public class MediaInfoEvent extends EventObject
+public class VideoInfoEvent extends EventObject
 {
     private final File mMediaFile;
     private final VideoInfo mMediaInfo;
 
-    public MediaInfoEvent(Object aSource, File aMediaFile, VideoInfo aMediaInfo)
+    public VideoInfoEvent(Object aSource, File aMediaFile, VideoInfo aMediaInfo)
     {
         super(aSource);
         mMediaFile = aMediaFile;
@@ -34,7 +34,7 @@ public class MediaInfoEvent extends EventObject
 
     public String toString()
     {
-        return "MediaInfoEvent{" +
+        return "VideoInfoEvent{" +
                 "mMediaFile=" + mMediaFile +
                 ", mMediaInfo=" + mMediaInfo +
                 '}';

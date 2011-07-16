@@ -14,4 +14,8 @@ public interface VideoInfo
     Integer getWidth();
 
     Integer getHeight();
+
+    public String getVideoCodec();
+
+    public String getAudioCodec();
 }
